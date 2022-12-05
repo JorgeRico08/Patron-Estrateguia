@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil completo</title>
+    <link rel="icon" href="/img/registro.png">
+    <%- include("partials/head") -%>
+</head>
+
+<body>
+
+    <%- include("partials/navigation") %>
+
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-10">
+              <div class="card rounded-3 text-black">
+                <div class="container">
+                  <div class="card-body p-md-5 mx-md-4">
+                    <h1 style="text-align: center;"><strong> DATOS DEL ALUMNOS</strong></h1> 
+                        
+                        <% datoRegistro.forEach(function (item) { %>
+                            <form style="margin-top: 2rem;" class="row g-3" action="/" method="get" enctype="multipart/form-data">
+
+                                <div class="col-6" style="text-align: center;">
+                                    <h6 style="margin-top: 1rem; text-align: center;"><strong>Foto de perfil</strong></h6>
+                                    <img src="/uploads/<%= item.fotoEstudiante %>" alt=""  width="200">
+                                </div>
+
+
+                                <div class="col-6">
+                                  <label for="nombre" class="form-label">Nombre(s).</label>
+                                  <input type="text" name="nombre" disabled value="<%= item.nombre %>" placeholder="nombre" class="form-control">
+                                </div>
+                                
+                              <div class="col-md-6">
+                                <label for="apePat" class="form-label">Apellido paterno.</label>
+                                <input type="text" name="apePat" disabled value="<%= item.apePat %>" placeholder="apellido paterno" class="form-control">
+                              </div>
+                    
+                              <div class="col-6">
+                                <label for="apeMat" class="form-label">Apellido materno.</label>
+                                <input type="text" name="apeMat" disabled value="<%= item.apeMat %>" placeholder="apellido materno" class="form-control">
+                              </div>
+              
+                              <div class="col-6">
+                                <label for="correo" class="form-label">Email</label>
+                                <input type="email" name="correo" disabled value="<%= item.correo %>" placeholder="correo electronico" class="form-control">
+                              </div>
+                              
+                              <div style="margin-top: 1rem;" class="row">
+                                <div class="mb-4 col-4">
+                                  <label for="telefonoPersonal" class="form-label">Telefono personal.</label>
+                                  <input type="tel" name="telefonoPersonal" disabled value="<%= item.telefonoPersonal %>" placeholder="Telefono personal"   maxlength="10" class="form-control">
+                                </div>
+                
+                                <div class="mb-4 col-4">
+                                  <label for="telefonoCasa" class="form-label">Telefono de tu domicilio.</label>
+                                  <input type="tel" name="telefonoCasa" disabled value="<%= item.telefonoCasa%>" placeholder="Telefono de tu domicilio"  maxlength="10" class="form-control">
+                                </div>
+                
+                                <div class="mb-4 col-4">
+                                  <label for="telefonoTutor" class="form-label">Telefono del tutor acargo.</label>
+                                  <input type="tel" name="telefonoTutor" disabled value="<%= item.telefonoTutor %>"  placeholder="Telefono del tutor"  maxlength="10" class="form-control">
+                                </div>
+                  
+                              </div>
+              
+                              <div class="container">
+              
+                                <h4 style="margin-top: 3rem;">Direccion de tu hogar</h4>
+                              </div>
+                          
+              
+                              <div class="col-md-6">
+                                <label for="calle" class="form-label">Calle.</label>
+                                <input type="text" name="calle" disabled value="<%= item.calle %>" placeholder="calle" class="form-control">
+                              </div>
+                    
+                              <div class="col-6">
+                                <label for="noExterior" class="form-label">Numero exterior</label>
+                                <input type="number" name="noExterior" disabled value="<%= item.noExterior %>" placeholder="noExterior" class="form-control">                       
+                              </div>
+              
+                              <div class="col-6">
+                                <label for="colonia" class="form-label">Colonia</label>
+                                <input type="text" name="colonia" placeholder="colonia" disabled value="<%= item.colonia %>" class="form-control">
+                              </div>
+              
+                              <div class="col-6">
+                                <label for="ciudad" class="form-label">Ciudad</label>
+                                <input type="text" name="ciudad" placeholder="ciudad" disabled value="<%= item.ciudad %>" class="form-control">
+                              </div>
+                                
+                              <div class="col-6">
+                                <label for="cP" class="form-label">Codigo postal</label>
+                                <input type="tel" name="cP" placeholder="codigo postal" disabled value="<%= item.cP %>" maxlength="5" class="form-control">
+                              </div>
+              
+                              <div class="container">
+              
+                                <h4 style="margin-top: 3rem;">Informacion Escolar</h4>
+                              </div>
+              
+                              <div class="col-6">
+                                <label for="bachilleratoPro" class="form-label">Bachillerato de procedencia</label>
+                                <input type="text" name="bachilleratoPro" disabled value="<%= item.bachilleratoPro %>" placeholder="Bachillerato de procedencia" class="form-control"> 
+                              </div>
+                              
+                              <div class="col-6">
+                                <label for="promedio" class="form-label">Promedio</label>
+                                <input type="number" name="promedio" disabled value="<%= item.promedio%>" maxlength="1" placeholder="Ultimo promedio obtenido" class="form-control">
+                              </div>
+                              
+                              <div class="col-6">
+                                <label for="especialidadCursada" class="form-label">Especialidad cursada</label>
+                                <input type="text" name="especialidadCursada" disabled value="<%= item.especialidadCursada %>" placeholder="Especialidad cursada" class="form-control">
+                              </div>
+              
+                              <div class="container">
+              
+                                <h4 style="margin-top: 3rem;">Informacion de los padres</h4>
+                              </div>
+              
+                              <div class="container">
+                                <h6>Mama</h6>
+                              </div>
+              
+                              <div class="col-6">
+                                <label for="nombreMama" class="form-label">Nombre de la madre</label>
+                                <input type="text" name="nombreMama" disabled value="<%= item.nombreMama %>" placeholder="nombre de mama" class="form-control">
+                              </div>
+                              
+                              <div class="col-6">
+                                <label for="apePatMama" class="form-label">Apellido paterno de la madre</label>
+                                <input type="text" name="apePatMama" disabled value="<%= item.apePatMama %>" placeholder="apellido de paterno de mama" class="form-control">
+                              </div>
+              
+                              <div class="col-6">
+                                <label for="apeMatMama" class="form-label">Apellido materno de la madre</label>
+                                <input type="text" name="apeMatMama" disabled value="<%= item.apeMatMama %>" placeholder="apellido de materno de mama" class="form-control">
+                              </div>
+              
+                              <div class="container">
+                                <h6 style="margin-top: 1rem;">Papa</h6>
+                              </div>
+              
+                              <div class="col-6">
+                                <label for="nombreMama" class="form-label">Nombre del padre</label>
+                                <input type="text" name="nombrePapa" disabled value="<%= item.nombrePapa %>" placeholder="nombre del padre" class="form-control">
+                              </div>
+                              
+                              <div class="col-6">
+                                <label for="apePatPapa" class="form-label">Apellido paterno del padre</label>
+                                <input type="text" name="apePatPapa" disabled value="<%= item.apePatPapa %>" placeholder="apellido de paterno de mama" class="form-control">
+                              </div>
+              
+                              <div class="col-6">
+                                <label for="apeMatPapa" class="form-label">Apellido materno del padre</label>
+                                <input type="text" name="apeMatPapa" disabled value="<%= item.apeMatPapa %>" placeholder="apellido de materno de mama" class="form-control">
+                              </div>
+                              
+                              <div class="col-6">
+
+                              </div>
+                       
+                              <div class="col-6" style="text-align: center;">
+                                <h6 style="margin-top: 1rem; text-align: center;"><strong>Certificado de bachillerato</strong></h6>
+                                <a href="/uploads/<%= item.certificado %>" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"  style="color: black;" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+                                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                                    <path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+                                  </svg></a>
+                            </div>
+                            <div class="col-6" style="text-align: center;">
+                                <h6 style="margin-top: 1rem; text-align: center;"><strong>Comprobante de domicilio</strong></h6>
+                                <a href="/uploads/<%= item.comprobanteDomicilio %>" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"  style="color: black;" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+                                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                                    <path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+                                  </svg></a>
+                            </div>
+                              
+                              </form>
+
+                        <% }) %>
+        
+  
+                  </div>
+                </div>
+    
+              </div>
+            </div>
+          </div>
+        </div>
+    
+</body>
+</html>

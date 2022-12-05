@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registrar alumno</title>
+    <link rel="icon" href="/img/registro.png">
+    <%- include("partials/head") -%>
+</head>
+
+<body>
+
+    <%- include("partials/navigation") %>
+
+    
+  
+
+    <div>
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-10">
+              <div class="card rounded-3 text-black">
+                <div class="container">
+                  <div class="card-body p-md-5 mx-md-4">
+                    <h1 style="text-align: center;"><strong> REGISTRO DE ALUMNOS</strong></h1> 
+                    <form style="margin-top: 2rem;" class="row g-3" action="/registrar" method="post" enctype="multipart/form-data">
+
+                      <div class="container">
+                    <h4><strong> Informacion personal </strong></h4>
+                      </div>
+    
+                      <div class="col-6">
+                        <label for="nombre" class="form-label">Nombre(s).</label>
+                        <input type="text" name="nombre" placeholder="nombre" required class="form-control">
+                      </div>
+                      
+                    <div class="col-md-6">
+                      <label for="apePat" class="form-label">Apellido paterno.</label>
+                      <input type="text" name="apePat" placeholder="apellido paterno" required class="form-control">
+                    </div>
+          
+                    <div class="col-6">
+                      <label for="apeMat" class="form-label">Apellido materno.</label>
+                      <input type="text" name="apeMat" placeholder="apellido materno" required class="form-control">
+                    </div>
+    
+                    <div class="col-6">
+                      <label for="correo" class="form-label">Email</label>
+                      <input type="email" name="correo" placeholder="correo electronico" required class="form-control">
+                    </div>
+    
+                    <div class="col-6">
+                      <label for="telefonoPersonal" class="form-label">Telefono personal (Solo 10 Digitos).</label>
+                      <input type="tel" name="telefonoPersonal" placeholder="Telefono personal" required minlength="10" maxlength="10" class="form-control">
+                    </div>
+    
+                    <div class="col-6">
+                      <label for="telefonoCasa" class="form-label">Telefono de tu domicilio (Solo 10 Digitos).</label>
+                      <input type="tel" name="telefonoCasa" placeholder="Telefono de tu domicilio" required minlength="10" maxlength="10" class="form-control">
+                    </div>
+    
+                    <div class="col-6">
+                      <label for="telefonoTutor" class="form-label">Telefono del tutor acargo (Solo 10 Digitos).</label>
+                      <input type="tel" name="telefonoTutor"  placeholder="Telefono del tutor" required minlength="10" maxlength="10" class="form-control">
+                    </div>
+    
+                  
+    
+                    <div class="container">
+    
+                      <h4 style="margin-top: 3rem;">Direccion de tu hogar</h4>
+                    </div>
+                
+    
+                    <div class="col-md-6">
+                      <label for="calle" class="form-label">Calle.</label>
+                      <input type="text" name="calle" placeholder="calle" required class="form-control">
+                    </div>
+          
+                    <div class="col-6">
+                      <label for="noExterior" class="form-label">Numero exterior</label>
+                      <input type="number" name="noExterior" minlength="1" maxlength="1" required placeholder="noExterior" class="form-control">                       
+                    </div>
+    
+                    <div class="col-6">
+                      <label for="colonia" class="form-label">Colonia</label>
+                      <input type="text" name="colonia" placeholder="colonia" required class="form-control">
+                    </div>
+    
+                    <div class="col-6">
+                      <label for="ciudad" class="form-label">Ciudad</label>
+                      <input type="text" name="ciudad" placeholder="ciudad" required class="form-control">
+                    </div>
+                      
+                    <div class="col-6">
+                      <label for="cP" class="form-label">Codigo postal</label>
+                      <input type="tel" name="cP" placeholder="codigo postal" required maxlength="5" class="form-control">
+                    </div>
+    
+                    <div class="container">
+    
+                      <h4 style="margin-top: 3rem;">Informacion Escolar</h4>
+                    </div>
+    
+                    <div class="col-6">
+                      <label for="bachilleratoPro" class="form-label">Bachillerato de procedencia</label>
+                      <input type="text" name="bachilleratoPro" required placeholder="Bachillerato de procedencia" class="form-control">
+                    </div>
+                    
+                    <div class="col-6">
+                      <label for="promedio" class="form-label">Promedio</label>
+                      <input type="number" name="promedio" maxlength="1" required minlength="1" placeholder="Ultimo promedio obtenido" class="form-control">
+                    </div>
+                    
+                    <div class="col-6">
+                      <label for="especialidadCursada" class="form-label">Especialidad cursada</label>
+                      <input type="text" name="especialidadCursada" required placeholder="Especialidad cursada" class="form-control">
+                    </div>
+
+                    <div class="container">
+    
+                      <h4 style="margin-top: 3rem;">Universidad a ser inscrito</h4>
+                    </div>
+                    <div class="col-6">
+                    <div class="form-group">
+                      <label for="universidad" class="form-label">Universidades</label>
+                      <select name="universidad" id="universidad" required class="custom-select">
+                          <!-- cargaremos las etiquetas de option con javascript -->
+                      </select>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                      <label for="provincia" class="form-label">Costo</label>
+                      <select name="costoInscripcion" id="costo" required class="custom-select">
+                          <!-- cargaremos las etiquetas de option con javascript -->
+                      </select>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                      <label for="distrito" class="form-label">Carreras</label>
+                      <select name="carrera" id="carrera" required class="custom-select">
+                          <!-- cargaremos las etiquetas de option con javascript -->
+                      </select>
+                  </div>
+                </div>
+    
+                    <div class="container">
+                      <h4 style="margin-top: 3rem;">Informacion de los padres</h4>
+                    </div>
+     
+                    <div class="container">
+                      <h6>Mama</h6>
+                    </div>
+    
+                    <div class="col-6">
+                      <label for="nombreMama" class="form-label">Nombre de la madre</label>
+                      <input type="text" name="nombreMama" required placeholder="nombre de mama" class="form-control">
+                    </div>
+                    
+                    <div class="col-6">
+                      <label for="apePatMama" class="form-label">Apellido paterno de la madre</label>
+                      <input type="text" name="apePatMama" required placeholder="apellido de paterno de mama" class="form-control">
+                    </div>
+    
+                    <div class="col-6">
+                      <label for="apeMatMama" class="form-label">Apellido materno de la madre</label>
+                      <input type="text" name="apeMatMama" required placeholder="apellido de materno de mama" class="form-control">
+                    </div>
+    
+                    <div class="container">
+                      <h6 style="margin-top: 1rem;">Papa</h6>
+                    </div>
+    
+                    <div class="col-6">
+                      <label for="nombreMama" class="form-label">Nombre del padre</label>
+                      <input type="text" name="nombrePapa" required placeholder="nombre del padre" class="form-control">
+                    </div>
+                    
+                    <div class="col-6">
+                      <label for="apePatPapa" class="form-label">Apellido paterno del padre</label>
+                      <input type="text" name="apePatPapa" required placeholder="apellido de paterno de mama" class="form-control">
+                    </div>
+    
+                    <div class="col-6">
+                      <label for="apeMatPapa" class="form-label">Apellido materno del padre</label>
+                      <input type="text" name="apeMatPapa" required placeholder="apellido de materno de mama" class="form-control">
+                    </div>
+    
+                    <div class="container">
+                      <h6 style="margin-top: 1rem;">Cargar imagenes de los documentos que se solicitan (<strong style="color: red;">Imagen de perfil</strong>)</h6>
+                    </div>
+    
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                            <input type="file" name="fotoEstudiante" required id="fotoEstudiante" class="custom-file-input" multiples id="inputGroupFile02" accept=".jpg, .png, .jpeg">
+                            <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02"> Cargar tu foto de perfil (Solo formato .jpg, .png, .jpeg)</label>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                      <h6 style="margin-top: 1rem;">Cargar imagenes de los documentos que se solicitan (<strong style="color: red;">Certificado de bachillerato </strong>)</h6>
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="custom-file">
+                          <input type="file" name="certificado" required id="certificado" accept=".pdf" class="custom-file-input" multiples id="inputGroupFile02">
+                          <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Sube tu certificado (Solo formato .pdf)</label>
+                      </div>
+                  </div>
+
+                  <div class="container">
+                    <h6 style="margin-top: 1rem;">Cargar imagenes de los documentos que se solicitan (<strong style="color: red;">Comprobate de domicilio </strong>)</h6>
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <div class="custom-file">
+                        <input type="file" name="comprobanteDomicilio" required id="comprobanteDomicilio" accept=".pdf" class="custom-file-input" multiples id="inputGroupFile02">
+                        <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Sube tu comprobante de domicilio (Solo formato .pdf)</label>
+                    </div>
+                </div>
+
+                  </div>
+                    
+                
+                    <div class="form-group">
+                        <button class="btn btn-success btn-block">
+                            Registrar
+                        </button>
+                    </div>
+                    
+                    </form>
+                  </div>
+                </div>
+    
+              </div>
+            </div>
+          </div>
+        </div>
+     
+        <script>
+let $universidad = document.getElementById('universidad')
+let $costo = document.getElementById('costo')
+let $carrera = document.getElementById('carrera')
+
+let Universidad = ['UTNG', 'UDHI']
+let Costo = [1550, 2000]
+let Carrera = ['Gestion de softwares', 'Redes', 'Diseño grafico', 'Mecatronica', 'Pedagogia', 'Emfermeria', 'Fisioterapia', 'Mestro Educacion Fisica', 'Chef']
+
+function mostrarLugares(arreglo, lugar) {
+    let elementos = '<option selected disables>--Seleccione--</option>'
+
+    for(let i = 0; i < arreglo.length; i++) {
+        elementos += '<option value="' + arreglo[i] +'">' + arreglo[i] +'</option>'
+    }
+
+    lugar.innerHTML = elementos
+}
+
+mostrarLugares(Universidad, $universidad)
+
+function recortar(array, inicio, fin, lugar) {
+    let recortar = array.slice(inicio, fin)
+    mostrarLugares(recortar, lugar)
+}
+
+$universidad.addEventListener('change', function() {
+    let valor = $universidad.value
+
+    switch(valor) {
+        case 'UTNG':
+            recortar(Costo, 0, 1, $costo)
+        break
+        case 'UDHI':
+            recortar(Costo, 1, 2, $costo)
+        break
+    }
+
+    $carrera.innerHTML = ''
+})
+
+$costo.addEventListener('change', function() {
+    let valor = $costo.value
+
+    if(valor == 1550) {
+        recortar(Carrera, 0, 4, $carrera)
+    } else if(valor == 2000) {
+        recortar(Carrera, 4, 10, $carrera)
+    }
+})
+        </script>
+
+
+
+</body>
+
+</html>

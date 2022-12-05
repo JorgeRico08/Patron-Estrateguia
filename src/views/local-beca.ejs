@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago con beca incluida</title>
+    <link rel="icon" href="/img/registro.png">
+    <%- include("partials/head") -%>
+</head>
+<body>
+    <%- include("partials/navigation") %>
+
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-xl-10">
+            <div class="card rounded-3 text-black">
+              <div class="container">
+                <div class="card-body p-md-5 mx-md-4">
+                  <h1 style="text-align: center;"><strong>Estas a un paso de completar tu resgistro</strong></h1> 
+                      
+                        <% B.forEach(function (item) { %>
+
+                            <div class="col-6">
+                              <label for="" class="form-label">La universidad a que te registras es</label>
+                              <input type="text" name="" disabled value="<%= item.universidad %>" placeholder="" class="form-control">
+                            </div>
+                            
+                            <div class="col-6">
+                              <label for="nombre" class="form-label">Tu carrera seleccionada</label>
+                              <input type="text" name="" disabled value="<%= item.carrera %>" placeholder="" class="form-control">
+                            </div>
+                            <% }) %>
+
+                            <form style="margin-top: 2rem;" class="row g-3" action="/registrarUniversidad/<%= B[0]._id %>" method="post" enctype="multipart/form-data">
+                                  <div class="col-6">
+                                  <label for="costoInscripcion" class="form-label">El total es</label>
+                                      <input type="number" name="costoInscripcion"  value="<%= A %>" class="form-control">
+                                    </div>
+
+                                    <div style="margin-top: 2.5rem;" class="container form-group">
+                                      <button class="btn btn-success btn-block" type="submit">
+                                          Registrar
+                                      </button>
+                                  </div>
+
+                              </form>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    
+</body>
+</html>
